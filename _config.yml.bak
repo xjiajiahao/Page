@@ -63,20 +63,49 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: apollo
-archive_generator:
-    per_page: 0
-    yearly: false     
-    monthly: false
-    daily: false
+theme: next
+
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
   repo: git@github.com:xjiajiahao/xjiajiahao.github.io.git
 
+# =============================================================================
+# NexT Theme configuration
+# =============================================================================
+avatar: /images/avatar.jpg
 
+#DuoShuo
+#duoshuo_shortname: xjiajiahao
 
+#Disqus
+disqus_shotname: xjiajiahao
+#Social Link
+social:
+  GitHub: https://github.com/xjiajiahao
+  Twitter: https://twitter.com/stephen_tse_
+  Weibo: http://weibo.com/xjiajiahao
+  ZhiHu: http://www.zhihu.com/people/stephen-tse
 
+# Google Analytics
+# Google分析ID
+google_analytics: UA-67050035-1
 
+# Swiftype 站内搜索
+swiftype_key: LJMdVBeNg3ZFpv4LF-5B
 
+# Creative Commons
+creative_commons: by-nc-sa
+
+# RSS
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
+# Sitemap
+#path: sitemap.xml
+# =============================================================================
+# End NexT Theme configuration
+# =============================================================================
