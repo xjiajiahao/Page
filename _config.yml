@@ -74,6 +74,7 @@ archive_generator:
 deploy:
   type: git
   repo: git@github.com:xjiajiahao/xjiajiahao.github.io.git
+  branch: master
 
 
 
