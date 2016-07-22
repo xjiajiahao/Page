@@ -11,9 +11,9 @@ categories: Coding
 
 >### Create a new post
 
->    ``` bash
->    $ hexo new "My New Post"
->    ```
+>``` bash
+>$ hexo new "My New Post"
+>```
 
 >More info: [Writing](http://hexo.io/docs/writing.html)
 

@@ -21,7 +21,7 @@ A makefile is based on a very simple concept. A makefile typically consists of m
 
 <!--more-->
 Basic syntax:
-```
+``` bash
 <target>: [ <dependency > ]*
    [ <TAB> <command> <endl> ]+
  ```
