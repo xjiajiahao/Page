@@ -1,22 +1,20 @@
 language: node_js
 node_js: stable
+
 cache:
   directories:
   - node_modules
-branches:
-  only:
-  - master
+
 before_install:
-- npm install
+- npm install -g gulp
 before_script:
 - git config --global user.name 'Stephen Tse'
 - git config --global user.email 'xjiajiahao@gmail.com'
-- sed -i'' "s~git@github.com:xjiajiahao/xjiajiahao.github.io.git~https://${GH_TOKEN}:x-oauth-basic@github.com/xjiajiahao/xjiajiahao.github.io.git~"
-  _config.yml
+- sed -i'' "s~git@github.com:xjiajiahao/xjiajiahao.github.io.git~https://${GH_TOKEN}:x-oauth-basic@github.com/xjiajiahao/xjiajiahao.github.io.git~" _config.yml
 install:
-- npm run generate
+- hexo generate
 script:
-- npm run deploy
+- hexo deploy
 env:
   global:
     secure: kf7dnXgNHY6rwoHP2NaRi6+wG4cROIGg2TIpYlCMeVWJW5/TjlS5yGA+OPEtAgh0+w4F8NXbDFBQpFb4BZwDyHKaWWfTvZLHXQXZijuKFtiw/Rr+u/Z+QRCsdfFnDTXPJfdr8XFHPk4LIZkat79mW7eEQfGvH4ujfeJyRNuyVq0UGMRk91ESq9xHITfsCAqcMp1Nsaal/lNc9leaKcwb6y3nCr9o4qy/gN3BQ+FLvf7w+Fl7YZ2LWTUUPO7tTbfeWviXOG9fYok/ovG0gz1fxvbaZwQutJxFtAkbHX/v10FObIT3JVLJOMS7XK/zYMW20B1deKaBDCz0vg52a2MstytATnvYXvXUUO4eUJOQ6DTev19pPTOIC8/Ft38tY3WVtBILxS/7JRucPBjDc6L7R2yMoAEtQSHiCkaOJbfIFOJgN+UzRmEpu8t2lMEccunaEXG6AaFDV1urOa9UAbGPCPwMbCiY66KnWgtrc65xraQBC7RLhA6KMvFnr+yAx9qgxax3EVFwZ549CC1qVsyGyqXebDaJsA+i6yZHNgsFyAIM2bTBkODvZw7LZttPcAkY+0zxuMos/E0tJl42zd5uaVaXWIdDSQMXjz/aANSQ6JXL+pmkxPfmcVXhX/cre2UA4zoYhg0HeFV8uRgKFnAkv9gYXEt11FI5UasQ1wx9zkI=
