@@ -1,31 +1,26 @@
 language: node_js
 node_js: stable
-
 branches:
   only:
   - master
-
 cache:
   directories:
   - node_modules
-
 before_install:
 - openssl aes-256-cbc -K $encrypted_e02c9558bd3a_key -iv $encrypted_e02c9558bd3a_iv
-  -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+  -in .travis/travis.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
 - cp .travis/ssh_config ~/.ssh/config
 - npm install -g hexo
-
 before_script:
-- git config --global user.name 'Stephen Tse'
-- git config --global user.email 'xjiajiahao@gmail.com'
+- git config --global user.name "Stephen Tse"
+- git config --global user.email xjiajiahao@gmail.com
 - git clone --depth=1 https://github.com/xjiajiahao/hexo-theme-apollo.git themes/apollo
-- git clone https://github.com/xjiajiahao/xjiajiahao.github.io.git -b master --single-branch .deploy_git
-
+- git clone https://github.com/xjiajiahao/xjiajiahao.github.io.git -b master --single-branch
+  .deploy_git
 script:
 - hexo generate
-
 after_success:
-- hexo d
+- hexo deploy
