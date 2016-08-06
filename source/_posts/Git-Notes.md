@@ -165,6 +165,7 @@ git pull
 #指定本地dev分支与远程origin/dev分支的映射  
 git branch --set-upstream branch-name origin/branch-name  
 ```
+
 ### 其他
 ``` bash
 #对所在分支打标签  
@@ -205,4 +206,4 @@ git config --global alias.br branch
 git config --global alias.unstage 'reset HEAD'  # 把暂存区的修改撤销掉（unstage）  
 git config --global alias.last 'log -1'    # 显示最后一次提交信息  
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"      # make log looks better
-```    
+```
