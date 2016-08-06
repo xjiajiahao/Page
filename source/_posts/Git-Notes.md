@@ -1,8 +1,9 @@
-title: Git 快速指南  
-date: 2016-08-06 13:13:03  
-tags: [Git]  
-categories: Coding  
----  
+title: Git Notes
+date: 2016-08-06 15:18:55
+tags: [Git]
+categories: Coding
+---
+
 本文源于一年前（2015年7月）的Git学习笔记，主要是常用指令的总结，参考自[廖雪峰的官方网站](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)。
 ### 最常用指令: clone, add, commit, push  
 ``` bash  
