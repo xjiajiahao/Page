@@ -21,7 +21,7 @@ before_install:
 before_script:
 - git config --global user.name 'Stephen Tse'
 - git config --global user.email 'xjiajiahao@gmail.com'
-- git clone --depth=1 https://github.com:xjiajiahao/hexo-theme-apollo.git themes/apollo
+- git clone --depth=1 https://github.com/xjiajiahao/hexo-theme-apollo.git themes/apollo
 - git clone git@github.com:xjiajiahao/xjiajiahao.github.io.git -b master --single-branch .deploy_git
 
 script:
