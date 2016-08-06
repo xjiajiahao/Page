@@ -11,7 +11,7 @@ cache:
 
 before_install:
 - openssl aes-256-cbc -K $encrypted_e02c9558bd3a_key -iv $encrypted_e02c9558bd3a_iv
-  -in .travis/id_rsa.enc -out ~\/.ssh/id_rsa -d
+  -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
