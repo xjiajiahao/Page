@@ -16,7 +16,7 @@ git commit -m "<your comment of this commit>"
 git commit -a -m "blabla..."  
 
 git push origin master  
-```  
+```
 
 ### 非常有用的指令
 ``` bash
