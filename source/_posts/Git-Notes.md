@@ -4,21 +4,21 @@ tags: [Git]
 categories: Coding
 ---
 
-本文源于一年前（2015年7月）的Git学习笔记，主要是常用指令的总结，参考自[廖雪峰的官方网站](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)。
-### 最常用指令: clone, add, commit, push  
+本文源于一年前（2015年7月）的Git学习笔记，主要是常用命令的总结，参考自[廖雪峰的官方网站](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)。
+### 最常用命令: clone, add, commit, push  
 ``` bash  
 git clone https://github.com/buguake/cms.git  
 
 git add .  
 
 git commit -m "<your comment of this commit>"  
-#上面两条等价于下面这条指令  
+#上面两条等价于下面这条命令  
 git commit -a -m "blabla..."  
 
 git push origin master  
 ```
 
-### 非常有用的指令
+### 非常有用的命令
 ``` bash
 # 将本地分支与远程分支映射
 git branch --set-upstream branch-name origin/branch-name  
@@ -26,9 +26,11 @@ git branch --set-upstream branch-name origin/branch-name
 git rm -r --cache .
 #把一个已有的本地仓库与远程仓库关联  
 git remote add origin https://github.com/xjiajiahao/learngit.git  
+# shallow clone
+git clone --depth=1 https://github.com/xjiajiahao/BPlusTree ~/BPlusTree
 ```
 <!--more-->
-### 基本指令  
+### 基本命令  
 ``` bash  
 #设置名字和邮箱:  
 git config --global user.name "Your Name"  
