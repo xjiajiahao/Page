@@ -13,8 +13,6 @@ docker pull wnameless/oracle-xe-11g
 
 # 运行容器，挂载宿主主机的文件夹
 docker run -d --name=qoracle -p 49160:22 -p 49161:1521 -v ~/Fuyang_data:/root/Fuyang_data  wnameless/oracle-xe-11g
-
-docker exec -it <container-name> /bin/bash
 ```
 
 这样，oracle xe 11g成功部署在服务器上，可以用ssh通过49160端口登录，或者用oracle客户端通过49161端口登录。
