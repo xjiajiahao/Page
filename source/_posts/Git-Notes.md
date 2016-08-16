@@ -21,7 +21,7 @@ git push origin master
 ### 非常有用的命令
 ``` bash
 # 将本地分支与远程分支映射
-git branch --set-upstream branch-name origin/branch-name  
+git branch --set-upstream-to branch-name origin/branch-name  
 # 清除缓存
 git rm -r --cache .
 #把一个已有的本地仓库与远程仓库关联  

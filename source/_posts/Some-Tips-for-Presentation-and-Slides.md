@@ -24,7 +24,7 @@ categories: 设计
   图标: [Easy Icon](http://www.easyicon.net/), [Iconfont](http://www.iconfont.cn/)
   矢量图形: [视觉中国](http://shijue.me/), [站酷](http://www.zcool.com.cn/)
   配色: [Color Scheme Designer](http://www.peise.net/tools/web/), [日本の伝統色](http://nipponcolors.com/#suoh), [Color Hexa](http://www.colorhexa.com/)
-  Templates: [PPT Mind](http://www.pptmind.com/)，[优品PPT](http://www.ypppt.com/)，[Graphicriver](http://graphicriver.net/category/presentation-templates)
+  Templates: [PPT Mind](http://www.pptmind.com/)，[优品PPT](http://www.ypppt.com/)，[Graphicriver](http://graphicriver.net/category/presentation-templates)，[逼格PPT](http://www.tretars.com/ppt-templates)
 
 <!--more-->
 #### Part 2 使用技巧
