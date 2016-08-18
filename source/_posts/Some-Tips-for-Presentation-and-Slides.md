@@ -9,34 +9,36 @@ categories: 设计
 #### Part 1 原材料
 
 * 常用软件：  
-    Office PowerPoint 2013 或以上，  
-    [WPS Office](http://www.wps.cn/product/),  
-    Keynote，  
-    [Prezi](https://prezi.com/),  
-    Photoshop  
+  - Office PowerPoint 2013 或以上，  
+  - [WPS Office](http://www.wps.cn/product/),  
+  - Keynote，  
+  - [Prezi](https://prezi.com/),  
+  - Photoshop  
 
 * 软件不懂如何使用请自行百度  
-  [谷歌](www.google.com)，  
-  [必应](cn.bing.com)，  
-  [知乎](www.zhihu.com)  
+  - [谷歌](www.google.com)，  
+  - [必应](cn.bing.com)，  
+  - [知乎](www.zhihu.com)  
 
 * 素材  
-  讲稿（演讲的逻辑），
-  配图: [Pixabay](https://pixabay.com/), [Unsplash](https://unsplash.com/), [Gratisography](http://www.gratisography.com/)
+  - 讲稿（演讲的逻辑），  
+  - 配图: [Pixabay](https://pixabay.com/), [Unsplash](https://unsplash.com/), [Gratisography](http://www.gratisography.com/)
 
-  图标: [Easy Icon](http://www.easyicon.net/), [Iconfont](http://www.iconfont.cn/)
+  - 图标: [Easy Icon](http://www.easyicon.net/), [Iconfont](http://www.iconfont.cn/)
 
-  矢量图形: [视觉中国](http://shijue.me/), [站酷](http://www.zcool.com.cn/)
+  - 矢量图形: [视觉中国](http://shijue.me/), [站酷](http://www.zcool.com.cn/)
 
-  配色: [Color Scheme Designer](http://www.peise.net/tools/web/), [日本の伝統色](http://nipponcolors.com/#suoh), [Color Hexa](http://www.colorhexa.com/)
+  - 配色: [Color Scheme Designer](http://www.peise.net/tools/web/), [日本の伝統色](http://nipponcolors.com/#suoh), [Color Hexa](http://www.colorhexa.com/)
 
-  Templates: [PPT Mind](http://www.pptmind.com/)，[优品PPT](http://www.ypppt.com/)，[Graphicriver](http://graphicriver.net/category/presentation-templates)，[逼格PPT](http://www.tretars.com/ppt-templates)
+  - Templates: [PPT Mind](http://www.pptmind.com/)，[优品PPT](http://www.ypppt.com/)，[Graphicriver](http://graphicriver.net/category/presentation-templates)，[逼格PPT](http://www.tretars.com/ppt-templates)
 
 
 <!--more-->
+
 #### Part 2 使用技巧
 
-建议先确定好每页的文字，再加上背景、颜色
+建议先确定好每页的文字，再加上背景、颜色  
+
 1. 尽量用图、表、符号，少用文字
 
 2. 一页PPT的文字尽量不要超过十行

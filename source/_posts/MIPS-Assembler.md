@@ -13,7 +13,9 @@ The main functions are as follows:
 
 **See Github: [https://github.com/xjiajiahao/MIPS-Assembler](https://github.com/xjiajiahao/MIPS-Assembler)**
 <!--more-->
+
 ### Screenshot
+
 ![screenshot](http://xjiajiahao.github.io/images/MIPS_Assembler_demo.png)
 
 ### How to Use
@@ -83,9 +85,10 @@ The instructions supported are as follows:
 You'd better use **lowercase** keywords because it's expected to do so.
 
 ### NOTE
-`lw $rt, imm($rs)`  
-`addi $rt, $rs, imm`  
-`srl $rd, $rt, shamt`  
+
+* `lw $rt, imm($rs)`  
+* `addi $rt, $rs, imm`  
+* `srl $rd, $rt, shamt`  
 
 Here `imm` and `shamt` shoule be a **DECIMAL** integer rather than hexadecimal number.
 

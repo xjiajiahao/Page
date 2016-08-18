@@ -5,7 +5,9 @@ categories: Coding
 ---
 
 本文源于一年前（2015年7月）的Git学习笔记，主要是常用命令的总结，参考自[廖雪峰的官方网站](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)。
+
 ### 最常用命令: clone, add, commit, push  
+
 ``` bash  
 git clone https://github.com/buguake/cms.git  
 
