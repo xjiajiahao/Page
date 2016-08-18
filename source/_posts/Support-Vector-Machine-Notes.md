@@ -116,3 +116,8 @@ $$
 $$
 k(\boldsymbol{x}_i, \boldsymbol{x}_j) = e^{-\frac{\mid \boldsymbol{x}_i - \boldsymbol{x}_j \mid}{2\sigma^2}}
 $$
+
+---------
+**[参 考 资 料]**  
+[1]  周志华.机器学习[M].北京.清华大学出版社,2016年,第 121-139 页.  
+[2]  Peter Harrington.机器学习实战[M].北京.人民邮电出版社,2013年,第 89-114 页.
