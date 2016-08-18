@@ -13,7 +13,8 @@ before_install:
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
 - cp .travis/ssh_config ~/.ssh/config
-- npm install -g hexo
+- sudo apt-get install cabal-install
+- npm install -g hex
 before_script:
 - git config --global user.name "Stephen Tse"
 - git config --global user.email xjiajiahao@gmail.com
