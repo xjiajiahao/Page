@@ -4,13 +4,10 @@ tags: [MIPS, Assembler]
 categories: Coding
 ---
 ### Introduction
-This project is a simple implementation of MIPS assembler and disassembler.  
-
-The *master* branch is based on Qt, which is recommended to use.  
-
-The *command* branch is a command line version, which just supports assembler.  
+This project is a simple implementation of MIPS assembler and disassembler. The *master* branch is based on Qt, which is recommended to use. The *command* branch is a command line version, which just supports assembler.  
 
 The main functions are as follows:
+
 * Assembler (support .s file as input and .coe and .bin as output file format)
 * Disassembler (by now only supports .bin file as input file and .s as output file)
 
@@ -20,8 +17,10 @@ The main functions are as follows:
 ![screenshot](http://xjiajiahao.github.io/images/MIPS_Assembler_demo.png)
 
 ### How to Use
-The assembler now supports 55 instructions and 5 data types(.asciiz, .byte, .half, .word) which can be found in `assembler.cpp`.
+The assembler now supports 55 instructions and 5 data types(.asciiz, .byte, .half, .word) which can be found in `assembler.cpp`.  
+
 The instructions supported are as follows:
+
 * lw
 * lb
 * lbu
@@ -85,8 +84,9 @@ You'd better use **lowercase** keywords because it's expected to do so.
 
 ### NOTE
 `lw $rt, imm($rs)`  
-`addi $rt, $rs, imm`
-`srl $rd, $rt, shamt`
+`addi $rt, $rs, imm`  
+`srl $rd, $rt, shamt`  
+
 Here `imm` and `shamt` shoule be a **DECIMAL** integer rather than hexadecimal number.
 
 The `.byte`, `.half`, `.word` values should be **HEXADECIMAL** integerr, i.e. 0x12345678.
