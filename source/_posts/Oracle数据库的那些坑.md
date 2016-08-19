@@ -1,4 +1,4 @@
-title: How to survive on Oracle
+title: Oracle数据库的那些坑
 date: 2016-08-13 14:07:50
 tags: [database]
 categories: Coding
