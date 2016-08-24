@@ -12,7 +12,9 @@ categories: Coding
 docker pull wnameless/oracle-xe-11g    
 
 # 运行容器，挂载宿主主机的文件夹
-docker run -d --name=qoracle -p 49160:22 -p 49161:1521 -v ~/Fuyang_data:/root/Fuyang_data  wnameless/oracle-xe-11g
+docker run -d --name=qoracle \
+-p 49160:22 -p 49161:1521 \
+-v ~/Fuyang_data:/root/Fuyang_data  wnameless/oracle-xe-11g
 ```
 
 这样，oracle xe 11g成功部署在服务器上，可以用ssh通过49160端口登录，或者用oracle客户端通过49161端口登录。
@@ -43,19 +45,20 @@ exec bash
 ### Oracle常用命令
 ``` sql
 # 查看数据库中的所有表格的名字和拥有者
-SQL> select owner, table_name from dba_tables;
+select owner, table_name from dba_tables;
 
 # create user(schema)
-SQL> create user CLIENT_TEST identified by client_test_password;
-SQL> grant connect, unlimited tablespace, resource to CLIENT_TEST;
-SQL> exit
+create user CLIENT_TEST identified by client_test_password;
+grant connect, unlimited tablespace, resource to CLIENT_TEST;
+exit
 
 # select example @NOTE 表格名称前要加上schema，如CLIENT_TEST.some_table
-select REPORT_ITEM_NAME, RESULT, UNITS, ABNORMAL_INDICATOR from CLIENT_TEST.some_table;
+select ID, Name from SchemaName.TableName;
 ```
 新建用户之后才能用下面的命令导入数据
 ``` bash
-imp system/oracle FROMUSER=<original user> TOUSER=CLIENT_TEST file=database.dmp log=database.log
+imp system/oracle FROMUSER=<original user> TOUSER=CLIENT_TEST \
+file=database.dmp log=database.log
 ```
 
 ### 编码设置
@@ -68,28 +71,52 @@ imp system/oracle FROMUSER=<original user> TOUSER=CLIENT_TEST file=database.dmp 
 
 编码不匹配的解决方案是将oracle服务端的默认编码改成`ZHS16GBK`，参见[fjxsunmit 的BLOG](http://fjxsunmit.blog.51cto.com/326634/600767)。
 ``` sql
-# 如果执行下面的语句时提示权限不足，则断开与服务器的连接，并以oracle用户登录即可
-SQL> connect / as sysdba;
+# 如果执行下面的语句时提示权限不足
+# 可以试试断开与服务器的连接，然后以oracle用户登录服务器即可
+connect / as sysdba;
 
 # 查询oracle服务端字符集
-SQL> select name,value$ from props$ where name like '%NLS%';
+select name,value$ from props$ where name like '%NLS%';
 
 # 修改编码
-SQL> shutdown immediate;
-SQL> startup mount
-SQL> alter session set sql_trace=true;
-SQL> alter system enable restricted session;
-SQL> alter system set job_queue_processes=0;
-SQL> alter system set aq_tm_processes=0;
-SQL> alter database open;
-SQL> set linesize 120;
-SQL> alter database character set zhs16gbk;
-# 上面的命令可能出错，因为新的字符集必须是旧的字符集的超集，保证兼容性，使用下面的命令可以跳过兼容性检查
-SQL> ALTER DATABASE character set INTERNAL_USE zhs16gbk;
-SQL> shutdown immediate;
-SQL> STARTUP
+shutdown immediate;
+startup mount
+alter session set sql_trace=true;
+alter system enable restricted session;
+alter system set job_queue_processes=0;
+alter system set aq_tm_processes=0;
+alter database open;
+set linesize 120;
+alter database character set zhs16gbk;
+# 上面的命令可能出错，因为新的字符集必须是旧的字符集的超集，保证兼容性
+#使用下面的命令可以跳过兼容性检查
+ALTER DATABASE character set INTERNAL_USE zhs16gbk;
+shutdown immediate;
+STARTUP
 select name,value$ from props$ where name like '%NLS%';
 # 再次检查字符集以确认是否成功修改编码
 ```
 
 编码改过来之后即可正常导入dmp数据，但是打印表格时中文显示仍然可能是`???`，这是由于系统自身的编码问题，笔者多次尝试将ubuntu系统默认的`locale`改为`zh_CN.GBK`，但是没有成功，最后在windows系统通过putty连接容器，修改putty的编码后才能正常显示中文。
+
+### 将查询结果保存到文件
+只要写两个sql脚本就能实现将查询结果输出到文本文件或者Excel文件中，参考自[VeryWhy](http://verywhy.com/7097/oracle-sqlplus%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E8%BE%93%E5%87%BA%E5%88%B0%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E6%88%96excel%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95)。
+
+第一个脚本是通用的，用以设置输出格式。
+
+``` sql
+# GetData.sql
+set term off
+set heading off
+set verify off
+set echo off
+spool /path/to/result.csv
+@Select.sql
+spool off
+exit
+```
+
+第二个脚本则是普通的sql语句，以逗号为分隔符：
+``` sql
+select ID || ',' || Name from SchemaName.TableName;
+```
