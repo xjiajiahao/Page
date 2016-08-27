@@ -82,8 +82,10 @@ cat file1 file2 > file              #将几个文件合并为一个文件
 git diff HEAD -- readme.txt  
 
 #丢弃修改  
-git checkout -- readme.txt       #丢弃工作区的修改  
-git reset HEAD readme.txt        #把暂存区的修改撤销掉（unstage），重新放回工作区  
+##丢弃工作区的修改  
+git checkout -- readme.txt       
+##把暂存区的修改撤销掉（unstage），重新放回工作区  
+git reset HEAD readme.txt        
 
 #删除repository中的文件  
 git rm test.txt  
@@ -99,7 +101,8 @@ git checkout -- test.txt
 ssh-keygen -t rsa -C"youremail@example.com"  
 
 #推送到GitHub  
-git remote add origin https://github.com/xjiajiahao/learngit.git  #把一个已有的本地仓库与远程仓库关联  
+##把一个已有的本地仓库与远程仓库关联  
+git remote add origin https://github.com/xjiajiahao/learngit.git  
 git push -u origin master  #把本地库的所有内容推送到远程库上  
 git push origin master    #把本地master分支的最新修改推送至GitHub  
 
@@ -126,7 +129,8 @@ git merge dev
 #删除分支  
 git branch -d dev  
 
-#因为创建、合并和删除分支非常快，所以Git鼓励你使用分支完成某个任务，合并后再删掉分支，
+#因为创建、合并和删除分支非常快，
+#所以Git鼓励你使用分支完成某个任务，合并后再删掉分支，
 #这和直接在master分支上工作效果是一样的，但过程更安全。  
 
 #查看分支历史  
@@ -207,7 +211,13 @@ git config --global alias.st status  #以st代表status
 git config --global alias.co checkout  
 git config --global alias.ci commit  
 git config --global alias.br branch  
-git config --global alias.unstage 'reset HEAD'  # 把暂存区的修改撤销掉（unstage）  
-git config --global alias.last 'log -1'    # 显示最后一次提交信息  
-git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"      # make log looks better
+# 把暂存区的修改撤销掉（unstage）  
+git config --global alias.unstage 'reset HEAD'  
+# 显示最后一次提交信息  
+git config --global alias.last 'log -1'    
+# make log looks better
+git config --global alias.lg "log --color
+--graph --pretty=format:'%Cred%h%Creset 
+-%C(yellow)%d%Creset %s
+%Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"      
 ```
