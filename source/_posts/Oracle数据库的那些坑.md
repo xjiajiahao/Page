@@ -44,15 +44,15 @@ exec bash
 
 ### Oracle常用命令
 ``` sql
-# 查看数据库中的所有表格的名字和拥有者
+/* 查看数据库中的所有表格的名字和拥有者 */
 select owner, table_name from dba_tables;
 
-# create user(schema)
+/* create user(schema) */
 create user CLIENT_TEST identified by client_test_password;
 grant connect, unlimited tablespace, resource to CLIENT_TEST;
 exit
 
-# select example @NOTE 表格名称前要加上schema，如CLIENT_TEST.some_table
+/* select example @NOTE 表格名称前要加上schema，如CLIENT_TEST.some_table */
 select ID, Name from SchemaName.TableName;
 ```
 新建用户之后才能用下面的命令导入数据
@@ -71,14 +71,14 @@ file=database.dmp log=database.log
 
 编码不匹配的解决方案是将oracle服务端的默认编码改成`ZHS16GBK`，参见[fjxsunmit 的BLOG](http://fjxsunmit.blog.51cto.com/326634/600767)。
 ``` sql
-# 如果执行下面的语句时提示权限不足
-# 可以试试断开与服务器的连接，然后以oracle用户登录服务器即可
+/* 如果执行下面的语句时提示权限不足 */
+/* 可以试试断开与服务器的连接，然后以oracle用户登录服务器即可 */
 connect / as sysdba;
 
-# 查询oracle服务端字符集
+/* 查询oracle服务端字符集 */
 select name,value$ from props$ where name like '%NLS%';
 
-# 修改编码
+/* 修改编码 */
 shutdown immediate;
 startup mount
 alter session set sql_trace=true;
@@ -88,13 +88,14 @@ alter system set aq_tm_processes=0;
 alter database open;
 set linesize 120;
 alter database character set zhs16gbk;
-# 上面的命令可能出错，因为新的字符集必须是旧的字符集的超集，保证兼容性
-#使用下面的命令可以跳过兼容性检查
+/* 上面的命令可能出错，因为新的字符集必须是旧的字符集的超集，保证兼容性 */
+/* 使用下面的命令可以跳过兼容性检查 */
 ALTER DATABASE character set INTERNAL_USE zhs16gbk;
 shutdown immediate;
 STARTUP
 select name,value$ from props$ where name like '%NLS%';
-# 再次检查字符集以确认是否成功修改编码
+/* 再次检查字符集以确认是否成功修改编码 */
+
 ```
 
 编码改过来之后即可正常导入dmp数据，但是打印表格时中文显示仍然可能是`???`，这是由于系统自身的编码问题，笔者多次尝试将ubuntu系统默认的`locale`改为`zh_CN.GBK`，但是没有成功，最后在windows系统通过putty连接容器，修改putty的编码后才能正常显示中文。
@@ -105,7 +106,7 @@ select name,value$ from props$ where name like '%NLS%';
 第一个脚本是通用的，用以设置输出格式。
 
 ``` sql
-# GetData.sql
+/* GetData.sql */
 set term off
 set heading off
 set verify off
