@@ -52,7 +52,7 @@ create user CLIENT_TEST identified by client_test_password;
 grant connect, unlimited tablespace, resource to CLIENT_TEST;
 exit
 
-/* select example @NOTE 表格名称前要加上schema，如CLIENT_TEST.some_table */
+/* select example @NOTE 表格名称前要加上schema */
 select ID, Name from SchemaName.TableName;
 ```
 新建用户之后才能用下面的命令导入数据
