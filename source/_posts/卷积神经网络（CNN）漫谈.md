@@ -11,13 +11,15 @@ tags:
 
 假设有一张$imageDim \times imageDim$的图像，我们可以一次只对一小块区域（比如说$8\times8$）进行特征学习，也就是说隐藏层的单元只连接到特定区域的输入单元，而不是全部，这样的话我们需要学习的权重的维度就变为
 $$ filterDim \times filterDim \times numFilters $$
-其中$numFilters$表示需要学习的特征图的数量。将特征矩阵与图像进行二维的卷积（参见[Matlab的conv2函数](http://cn.mathworks.com/help/matlab/ref/conv2.html)），得到卷积后的特征矩阵，矩阵的维度是
+其中$numFilters$表示需要学习的特征图的数量。将特征矩阵与图像进行二维的卷积（参见[Matlab的conv2函数](http://cn.mathworks.com/help/matlab/ref/conv2.html)），得到卷积后的特征矩阵，矩阵的维度是：
+$$
+convDim \times convDim \times numFilters,
+where \ \ convDim = imagDim - filterDim + 1
+$$
 
 
 ### 池化
-卷积后的特征图需要经过池化（Pooling），以减少特征数目并防止过拟合。假设选取的池化区域的大小为$poolDim \times poolDim$，我们把卷积后的特征图分为不相交的$poolDim \times poolDim$区域，对每个区域内的特征取平均值（或最大值），作为池化层的特征值，得到的特征值可以用于分类。
-
-Matlab代码见Github（[cnnPool.m](https://github.com/xjiajiahao/UFLDL-Exercises/blob/master/cnn/cnnPool.m)）：
+卷积后的特征图需要经过池化（Pooling），以减少特征数目并防止过拟合。假设选取的池化区域的大小为$poolDim \times poolDim$，我们把卷积后的特征图分为不相交的$poolDim \times poolDim$区域，对每个区域内的特征取平均值（或最大值），作为池化层的特征值，得到的特征值可以用于分类。Matlab代码见Github（[cnnPool.m](https://github.com/xjiajiahao/UFLDL-Exercises/blob/master/cnn/cnnPool.m)。
 
 ### 随机梯度下降（SGD）
 标准的梯度下降算法是利用整个训练集计算损失函数（cost function），然后更新参数：
