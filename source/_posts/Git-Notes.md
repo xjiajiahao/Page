@@ -30,6 +30,8 @@ git rm -r --cache .
 git remote add origin https://github.com/xjiajiahao/learngit.git  
 # shallow clone
 git clone --depth=1 https://github.com/xjiajiahao/BPlusTree ~/BPlusTree
+# clone一个仓库后，可以用checkout跳到其他分支
+git checkout dev
 ```
 <!--more-->
 ### 基本命令  
