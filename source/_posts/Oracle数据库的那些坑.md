@@ -62,7 +62,7 @@ file=database.dmp log=database.log
 ```
 
 ### 编码设置
-如果在导入imp数据时出错，并且错误信息是字段长度超限，则很有可能是编码不对，例如（导出时的编码是`ZHS16GBK`，导入时用的是`AL32UTF8`）。
+如果在导入dmp格式的数据时出错，并且错误信息是字段长度超限，则很有可能是编码不对，例如（导出时的编码是`ZHS16GBK`，导入时用的是`AL32UTF8`）。
 
 **温馨提示**：如果出错后无法进入oracle，并提示`shared memory realm does not exist`，可以试试重启`oracle-xe`
 ``` bash
