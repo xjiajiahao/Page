@@ -12,11 +12,12 @@ The main functions are as follows:
 * Disassembler (by now only supports .bin file as input file and .s as output file)
 
 **See Github: [https://github.com/xjiajiahao/MIPS-Assembler](https://github.com/xjiajiahao/MIPS-Assembler)**
-<!--more-->
 
 ### Screenshot
 
 ![screenshot](http://xjiajiahao.github.io/images/MIPS_Assembler_demo.png)
+
+<!--more-->
 
 ### How to Use
 The assembler now supports 55 instructions and 5 data types(.asciiz, .byte, .half, .word) which can be found in `assembler.cpp`.  
