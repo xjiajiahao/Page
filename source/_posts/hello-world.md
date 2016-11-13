@@ -4,7 +4,9 @@ tags: [hexo]
 categories: Coding
 ---
 这篇Hello World文章是Hexo自动创建的，不是本人的作品，以下引用部分为原文。本网站主要使用了Hexo来搭建，以后有机会我会发文章分享一下建网站的心得和经验。
+
 <!--more-->
+
 >Welcome to [Hexo](http://hexo.io/)! This is your very first post. Check [documentation](http://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](http://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
 >## Quick Start
