@@ -19,7 +19,7 @@ $$
 
 
 ### 池化
-卷积后的特征图需要经过池化（Pooling），以减少特征数目并防止过拟合。假设选取的池化区域的大小为$poolDim \times poolDim$，我们把卷积后的特征图分为不相交的$poolDim \times poolDim$区域，对每个区域内的特征取平均值（或最大值），作为池化层的特征值，得到的特征值可以用于分类。Matlab代码见Github（[cnnPool.m](https://github.com/xjiajiahao/UFLDL-Exercises/blob/master/cnn/cnnPool.m)。
+卷积后的特征图需要经过池化（Pooling），以减少特征数目并防止过拟合。假设选取的池化区域的大小为$poolDim \times poolDim$，我们把卷积后的特征图分为不相交的$poolDim \times poolDim$区域，对每个区域内的特征取平均值（或最大值），作为池化层的特征值，得到的特征值可以用于分类。Matlab代码见Github（[cnnPool.m](https://github.com/xjiajiahao/UFLDL-Exercises/blob/master/cnn/cnnPool.m)）。
 
 ### 随机梯度下降（SGD）
 标准的梯度下降算法是利用整个训练集计算损失函数（cost function），然后更新参数：
