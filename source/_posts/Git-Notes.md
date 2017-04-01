@@ -18,6 +18,9 @@ git commit -m "<your comment of this commit>"
 git commit -a -m "blabla..."  
 
 git push origin master  
+
+# 版本回退
+git reset <commit>  # <commit> 是指commit的哈希值，如0311cd，只需写前几位即可
 ```
 
 ### 非常有用的命令
@@ -219,7 +222,7 @@ git config --global alias.unstage 'reset HEAD'
 git config --global alias.last 'log -1'    
 # make log looks better
 git config --global alias.lg "log --color
---graph --pretty=format:'%Cred%h%Creset 
+--graph --pretty=format:'%Cred%h%Creset
 -%C(yellow)%d%Creset %s
 %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"      
 ```
