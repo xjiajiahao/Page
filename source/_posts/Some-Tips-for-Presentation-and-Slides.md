@@ -30,7 +30,7 @@ categories: 设计
 
   - 配色: [Color Scheme Designer](http://www.peise.net/tools/web/), [日本の伝統色](http://nipponcolors.com/#suoh), [Color Hexa](http://www.colorhexa.com/)
 
-  - Templates: [PPT Mind](http://www.pptmind.com/)，[优品PPT](http://www.ypppt.com/)，[Graphicriver](http://graphicriver.net/category/presentation-templates)，[逼格PPT](http://www.tretars.com/ppt-templates)
+  - Templates: [PPT Mind](http://www.pptmind.com/)，[优品PPT](http://www.ypppt.com/)，[Graphicriver](http://graphicriver.net/category/presentation-templates)，[逼格PPT](http://www.tretars.com/ppt-templates)，[OfficePlus](http://office.mmais.com.cn/List.shtml?cat=PPT)
 
 
 <!--more-->
