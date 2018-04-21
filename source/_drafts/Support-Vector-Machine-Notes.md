@@ -3,11 +3,6 @@ date: 2016-08-17 21:04:47
 tags: [ml]
 categories: Coding
 ---
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-});
-</script>
 支持向量机的基本思路是在样本空间找到一个超平面（假设样本有 $n$ 个特征值，两类样本分别标记为`1`和`-1`），将两个类别的样本点区分开。
 
 找到一个最好的超平面的思路则是找到刚好位于两类样本点的正中间，即鲁棒性最好。划分超平面的方程为：
