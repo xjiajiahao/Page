@@ -14,7 +14,7 @@ First, we defind the notations we are going to use later:
 
 * $x, y$: arbitrary vectors in $\mathcal{X}$
 
-* $x^*$: the minimizer of $f$
+* $x^\*$: the minimizer of $f$
 
 * $\partial f(x)$: the subgradient set of $f(x)$, note that we also use the same notation to denote some subgradient in the set when there is no ambiguity.
 
@@ -29,6 +29,8 @@ First, we defind the notations we are going to use later:
 
 ### $f$ is $\mu$-strongly convex
 * $f(x) - f(y) \le \langle \partial f(x), x - y \rangle - \frac{\mu}{2} \|x - y\|^2$
+
+* $f(\gamma x + (1 - \gamma y)) \le \gamma f(x) + (1 - \gamma) f(y) - \frac{\mu}{2} \gamma (1 - \gamma) \|x - y\|^2, \forall \gamma \in [0, 1]$
 
 * $\mu\|x - y\|^2 \le \langle \nabla f(x) - \nabla f(y), x - y \rangle$, i.e., the subgradient of convex $f$ is a strongly monotone operator
 
@@ -82,7 +84,6 @@ $$
 
 #### Yong's Inequality
 
-
 General form: assume that $a, b \ge 0$, $p, q \ge 0$ and $\frac{1}{p} + \frac{1}{q} = 1$, then
 
 $$
@@ -94,7 +95,6 @@ Two useful special cases:
 * $ab \le \frac{a^2}{2} + \frac{b^2}{2}$
 
 * $ab \le \frac{a^2}{2\epsilon} + \frac{\epsilon b^2}{2}$ (rob Peter to pay Paul，拆东墙补西墙)
-
 
 #### Hölder's Inequality
 Let $(S, \Sigma, \mu)$ be a measure space, $p, q \in [1, \infty]$, $1/p + 1/q = 1$. Then for all measurable real or complex functions $f$ and $g$ on $S$,
