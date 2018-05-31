@@ -14,7 +14,7 @@ First, we defind the notations we are going to use later:
 
 * $x, y$: arbitrary vectors in $\mathcal{X}$
 
-* $x^\*$: the minimizer of $f$
+* $x^*$: the minimizer of $f$
 
 * $\partial f(x)$: the subgradient set of $f(x)$, note that we also use the same notation to denote some subgradient in the set when there is no ambiguity.
 
