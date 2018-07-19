@@ -21,6 +21,9 @@ git push origin master
 
 # 版本回退
 git reset <commit>  # <commit> 是指commit的哈希值，如0311cd，只需写前几位即可
+
+# 修改 commit message
+git commit --amend
 ```
 
 ### 非常有用的命令
